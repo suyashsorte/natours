@@ -1,3 +1,4 @@
+const path = require('path');
 const fs = require('fs');
 const express = require('express');
 const morgan = require('morgan');
@@ -10,9 +11,17 @@ const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const tourrouter = require('./routes/tourroutes');
 const userrouter = require('./routes/userroutes');
+const reviewRouter = require('./routes/reviewRoutes');
 const app = express();
 
+app.set('view engine', 'pug');
+app.set('views', path.join(__dirname, 'views'));
+
 // 1)GLOBAL MIDDLEWARES
+
+// Serving static files
+app.use(express.static(path.join(__dirname, 'public')));
+
 // Set Security HTTP header
 app.use(helmet());
 console.log(process.env.NODE_ENV);
@@ -48,8 +57,6 @@ app.use(
     ],
   })
 );
-// Serving static files
-app.use(express.static(`${__dirname}/public`));
 
 // app.use((req, res, next) => {
 //   console.log('hello from middleware');
@@ -65,10 +72,13 @@ app.use((req, res, next) => {
 // 2)ROUTE HANDLERS
 // sent to routes directory
 
-// 3)ROUTE
-
+// 3)ROUTES
+app.get('/', (req, res) => {
+  res.status(200).render('base');
+});
 app.use('/api/v1/tours', tourrouter);
 app.use('/api/v1/users', userrouter);
+app.use('/api/v1/reviews', reviewRouter);
 
 // if the above middleware routes are not macthed then only below code will execute
 app.all('*', (req, res, next) => {
