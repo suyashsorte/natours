@@ -6,6 +6,7 @@ const router = express.Router();
 
 router.post('/signup', authcontroller.signup);
 router.post('/login', authcontroller.login);
+router.get('/logout', authcontroller.logout);
 router.post('/forgotpassword', authcontroller.forgotPassword);
 router.patch('/resetpassword/:token', authcontroller.resetPassword);
 // midddleware functions runs in sequence. So after this point all the routes will first pass through authcontroller/protect

@@ -120,6 +120,7 @@ const tourSchema = new mongoose.Schema(
 tourSchema.index({ price: 1, ratingsAverage: -1 }); //1 for ascend -1 for desc
 tourSchema.index({ slug: 1 });
 tourSchema.index({ startLocation: '2dsphere' });
+
 tourSchema.virtual('durationWeeks').get(function () {
   return this.duration / 7;
 });
@@ -133,8 +134,9 @@ tourSchema.virtual('reviews', {
 
 // DOCUMENT MIDDELWARE(): runs before .save() and .create(). This is mongoose middleware.Works only for create and not for update
 tourSchema.pre('save', function (next) {
-  //   console.log(this);
+  console.log(this);
   this.slug = slugify(this.name, { lower: true });
+  console.log('this is the link->', this.slug);
   next();
 });
 
