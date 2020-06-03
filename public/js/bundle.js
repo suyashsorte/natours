@@ -6584,12 +6584,13 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.displayMap = void 0;
+
 // to disable eslint
 
 /* eslint-disable */
-console.log('dscasdcva'); // const locations = JSON.parse(document.getElementById('map').dataset.locations);
+// console.log('dscasdcva');
+// const locations = JSON.parse(document.getElementById('map').dataset.locations);
 // console.log(location);
-
 var displayMap = function displayMap(locations) {
   mapboxgl.accessToken = 'pk.eyJ1Ijoic3V5YXNoc29ydGUiLCJhIjoiY2thazRudWc0MGdtNjJxcGVrOHc3ZDl0NSJ9.HbXRa_1OEy2pc1_0KL4s_w';
   var map = new mapboxgl.Map({
@@ -8465,16 +8466,16 @@ var login = /*#__PURE__*/function () {
               }, 1500);
             }
 
-            _context.next = 11;
+            _context.next = 10;
             break;
 
           case 7:
             _context.prev = 7;
             _context.t0 = _context["catch"](0);
-            console.log('this is eerorr');
+            // console.log('this is eerorr');
             (0, _alerts.showAlert)('error', _context.t0.response.data.message);
 
-          case 11:
+          case 10:
           case "end":
             return _context.stop();
         }
@@ -8865,8 +8866,8 @@ function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-console.log('Hello from parcel'); // DOM Elements
-
+// console.log('Hello from parcel');
+// DOM Elements
 var mapBox = document.getElementById('map');
 var loginForm = document.querySelector('.form--login');
 var logOutBtn = document.querySelector('.nav__el--logout');

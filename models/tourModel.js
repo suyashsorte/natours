@@ -134,9 +134,9 @@ tourSchema.virtual('reviews', {
 
 // DOCUMENT MIDDELWARE(): runs before .save() and .create(). This is mongoose middleware.Works only for create and not for update
 tourSchema.pre('save', function (next) {
-  console.log(this);
+  // console.log(this);
   this.slug = slugify(this.name, { lower: true });
-  console.log('this is the link->', this.slug);
+  // console.log('this is the link->', this.slug);
   next();
 });
 
@@ -172,7 +172,7 @@ tourSchema.pre(/^find/, function (next) {
 });
 tourSchema.post(/^find/, function (docs, next) {
   //   console.log(docs);
-  console.log(`query took: ${Date.now() - this.start} milliseconds!`);
+  // console.log(`query took: ${Date.now() - this.start} milliseconds!`);
   next();
 });
 

@@ -1,7 +1,7 @@
 // to disable eslint
 /* eslint-disable */
 
-console.log('dscasdcva');
+// console.log('dscasdcva');
 // const locations = JSON.parse(document.getElementById('map').dataset.locations);
 // console.log(location);
 

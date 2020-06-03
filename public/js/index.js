@@ -2,7 +2,7 @@ import '@babel/polyfill';
 import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
-console.log('Hello from parcel');
+// console.log('Hello from parcel');
 
 // DOM Elements
 const mapBox = document.getElementById('map');
