@@ -16,6 +16,7 @@ const tourrouter = require('./routes/tourroutes');
 const userrouter = require('./routes/userroutes');
 const reviewRouter = require('./routes/reviewRoutes');
 const viewRouter = require('./routes/viewroutes');
+const bookingRouter = require('./routes/bookingRoutes');
 const app = express();
 
 app.set('view engine', 'pug');
@@ -86,6 +87,7 @@ app.use('/', viewRouter);
 app.use('/api/v1/tours', tourrouter);
 app.use('/api/v1/users', userrouter);
 app.use('/api/v1/reviews', reviewRouter);
+app.use('/api/v1/bookings', bookingRouter);
 
 // if the above middleware routes are not macthed then only below code will execute
 app.all('*', (req, res, next) => {
