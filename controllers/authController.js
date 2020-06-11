@@ -21,16 +21,16 @@ const createSendToken = (user, statuscode, req, res) => {
   //   httponly: true,
   //   secure:req.secure || req.headers('x-forwarded-proto') === 'https'
   // };
-
+  console.log('create send token', token);
   res.cookie('jwt', token, {
     expires: new Date(
       Date.now() + process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000
     ),
 
     httponly: true,
-    secure: req.secure || req.headers('x-forwarded-proto') === 'https',
+    secure: req.secure || req.headers['x-forwarded-proto'] === 'https',
   });
-
+  console.log('create send tiken');
   // Remove password from output
   user.password = undefined;
 
@@ -57,6 +57,7 @@ exports.signup = catchAsync(async (req, res, next) => {
 
   createSendToken(newUser, 201, req, res);
 });
+
 exports.login = catchAsync(async (req, res, next) => {
   console.log('auth');
   const { email, password } = req.body;
@@ -129,6 +130,7 @@ exports.protect = catchAsync(async (req, res, next) => {
     token = req.cookies.jwt;
   }
   //   console.log(token);
+  console.log('token: ', token);
   if (!token) {
     return next(new AppError('You are not logged in! Please login', 401));
   }

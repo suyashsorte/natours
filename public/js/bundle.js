@@ -8474,7 +8474,7 @@ var login = /*#__PURE__*/function () {
           case 8:
             _context.prev = 8;
             _context.t0 = _context["catch"](0);
-            console.log('this is eerorr');
+            console.log('this is login erorr');
             (0, _alerts.showAlert)('error', _context.t0.response.data.message);
 
           case 12:
