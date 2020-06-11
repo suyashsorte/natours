@@ -8632,13 +8632,13 @@ var bookTour = /*#__PURE__*/function () {
         switch (_context.prev = _context.next) {
           case 0:
             _context.prev = 0;
-            console.log('tour id', tourId); // 1) Get checkout session from API
+            _context.next = 3;
+            return (0, _axios.default)( // `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`
+            "/api/v1/bookings/checkout-session/".concat(tourId));
 
-            _context.next = 4;
-            return (0, _axios.default)("http://localhost:3000/api/v1/bookings/checkout-session/".concat(tourId));
-
-          case 4:
+          case 3:
             session = _context.sent;
+            console.log('tour id', tourId);
             console.log(session); // 2) Create checkout form + charge credit card
 
             _context.next = 8;
