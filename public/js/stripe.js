@@ -12,7 +12,7 @@ export const bookTour = async (tourId) => {
       // `http://localhost:3000/api/v1/bookings/checkout-session/${tourId}`
       `/api/v1/bookings/checkout-session/${tourId}`
     );
-    console.log('tour id', tourId);
+
     console.log(session);
     // 2) Create checkout form + charge credit card
     await stripe.redirectToCheckout({

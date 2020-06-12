@@ -12,6 +12,7 @@ const logOutBtn = document.querySelector('.nav__el--logout');
 const userDataForm = document.querySelector('.form-user-data');
 const userPasswordForm = document.querySelector('.form-user-password');
 const bookBtn = document.getElementById('book-tour');
+
 // DELEGATIONS
 if (mapBox) {
   const locations = JSON.parse(mapBox.dataset.locations);
@@ -61,7 +62,7 @@ if (userPasswordForm)
 if (bookBtn)
   bookBtn.addEventListener('click', (e) => {
     e.target.textContent = 'Processing...';
-    const { tourId } = e.target.dataset;
-    console.log('index ', tourId);
+    const { tourId } = e.currentTarget.dataset;
+    console.log('index ', { tourId });
     bookTour(tourId);
   });
