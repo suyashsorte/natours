@@ -3,6 +3,7 @@ import { displayMap } from './mapbox';
 import { login, logout } from './login';
 import { updateSettings } from './updateSettings';
 import { bookTour } from './stripe';
+import { alert } from './alerts';
 // console.log('Hello from parcel');
 
 // DOM Elements
@@ -66,3 +67,5 @@ if (bookBtn)
     console.log('index ', { tourId });
     bookTour(tourId);
   });
+const alertMessage = document.querySelector('body').dataset.alert;
+if (alert) showAlert('success', alertMessage, 20);
