@@ -25,4 +25,4 @@ Note: To login enter the following credentials
 * **Email Address** : leo@example.com 
 * **Password** : test1234
 and to book tour enter following card detail
-* **card Number** : 4242 4242 4242 4242
+* **Card Number** : 4242 4242 4242 4242
