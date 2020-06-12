@@ -18,9 +18,12 @@ Natours is web application which is built using a RESTful API along with JWT aut
 This site can be found [here](https://frozen-reaches-64154.herokuapp.com/)
 
 # Status
-Currently under progress to add more features
+Currently under progress to add more features as
+* Make website responsive
+* Add sign up page
+* Add links to User Accounts Settings
 
-Note: To login enter the following credentials
+**Note**: To login enter the following credentials
 * **Email Address** : leo@example.com 
 * **Password** : test1234
 
