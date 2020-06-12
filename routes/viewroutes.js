@@ -4,7 +4,7 @@ const viewsController = require('../controllers/viewController');
 const authController = require('../controllers/authController');
 const bookingController = require('../controllers/bookingController');
 
-router.use(viewsController.alert);
+router.use(viewsController.alerts);
 router.get(
   '/',
   // bookingController.createBookingCheckout,

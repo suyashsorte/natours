@@ -1,0 +1,4 @@
+To run on localhost uncomment in the following:
+1)stripe.js
+2)login.js
+3)updateSettings.js
