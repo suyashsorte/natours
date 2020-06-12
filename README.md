@@ -20,3 +20,9 @@ This site can be found [here](https://frozen-reaches-64154.herokuapp.com/)
 
 # Status
 Currently under progress to add more features
+
+Note: To login enter the following credentials
+* **Email Address** : leo@example.com 
+* **Password** : test1234
+and to book tour enter following card detail
+* **card Number** : 4242 4242 4242 4242
