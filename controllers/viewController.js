@@ -8,14 +8,14 @@ exports.alerts = (req, res, next) => {
   const { alert } = req.query;
   if (alert === 'booking')
     res.locals.alert =
-      "Your booking was successful! If your bookung doesn't show up here immidietly, please come back later";
+      "Your booking was successful! If your booking doesn't show up here immidietly, please come back later";
   next();
 };
 
 exports.getOverview = catchAsync(async (req, res) => {
   // 1) Get tour data from colection
   const tours = await Tour.find();
-  console.log('enterd');
+  console.log('enter viewscontroller getOverview');
   // 2) Build templeate
 
   // 3)Render template using tour data from 1
